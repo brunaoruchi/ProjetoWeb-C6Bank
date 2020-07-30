@@ -12,7 +12,8 @@ body {
 }
 
 section {
-    background: url("assets/hero-bg.jpg") no-repeat center center / cover;
+    background: url("assets/hero-bg.jpg")  no-repeat center center / cover, linear-gradient(180deg, rgba(0, 0, 0, 0) 31.46%, #000000 100%);
+    background-blend-mode: multiply;
     height: 100vh;
 }
 
@@ -29,21 +30,9 @@ header {
 
 nav {
     display: flex;
-    height: 80px;
     align-items: center;
     margin-bottom: -80px;
-}
-
-@media (min-width:960px) {
-    .icon-min {
-        display: none;
-    }
-}
-
-@media (min-width:0px) and (max-width:959.95px) {
-    .icon-max{
-        display: none;
-    }
+    min-height: 82px;
 }
 
 .navegacao li{
@@ -57,7 +46,11 @@ nav {
 }
 
 .navegacao-li + .navegacao-li {
-    margin-left: 32px;
+    margin-left: 28px;
+}
+
+.navegacao-li-a {
+    text-decoration: none; color: #fafafa;
 }
 
 .botao {
@@ -84,10 +77,12 @@ nav {
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 64px;
-    padding-top: 16px;
     height: 100%;
 }
 
+.container-nav {
+    height: 100%;
+}
 
 .link-desconto {
     display: inline-flex;
@@ -103,31 +98,10 @@ nav {
     cursor: pointer;
     font-size: 0.875rem;
 }
-@media (min-width:0px) and (max-width:959.95px) {
-    .link-desconto {
-        margin-top: 320px;
-        font-size: 0.75rem;
-        max-width: 560px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-}
 
 .texto-botao-desconto{
     display: inline-flex;
     align-items: center;
-}
-
-@media (min-width:0px) and (max-width:959.95px){
-    .texto-botao-desconto{
-        display: inline-block;
-    }
-}
-
-@media (min-width:0px) and (max-width:959.95px){
-    .texto-botao-desconto p{
-        margin-left: 8px;
-    }
 }
 
 .link-desconto span {
@@ -141,6 +115,11 @@ nav {
     align-items: center;
     font-weight: 600;
 }
+
+.link-desconto div{
+    display: flex;
+    align-items: center;
+} 
 
 .dia-pais {
     margin-left: 8px;
@@ -160,12 +139,6 @@ h1 {
     max-width: 75%
 }
 
-@media (min-width:0px) and (max-width:959.95px){
-    h1 {
-        max-width: 100%
-    }
-}
-
 h2 {
     padding: 0;
     color: rgb(250, 250, 250);
@@ -173,20 +146,10 @@ h2 {
     line-height: 1.33;
     font-weight: normal;
     max-width: 83.33333333%;
-    
-}
-@media (min-width:0px) and (max-width:959.95px){
-    h2{
-        max-width: 100%;
-        font-size: 1.3rem;
-        display: inline-block;
-    }
 }
 
-@media (min-width:960px) {
-    h2 span{
-        display: inline-block;
-    }
+h2 span{
+    display: block;
 }
 
 .botao-produtos {
@@ -213,12 +176,6 @@ h2 {
 .botao-produtos:hover {
     border-color: hsla(0, 0%, 98%, 1);
     background-color: hsla(0, 0%, 98%, 0.1);
-}
-
-@media (min-width:0px) and (max-width:959.95px) {
-    .botao-produtos {
-        max-width: 960px;
-    }
 }
 
 .links {
@@ -260,3 +217,153 @@ h2 {
     font-weight: 400;
     font-size: 14px;
 }
+
+.icon-min{
+    display: none;
+}
+
+@media (max-width: 1300px) {
+}
+
+@media (max-width: 1279px) {
+    header{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+
+    .icon-min{
+        display: inline-block;
+    }
+
+    .icon-max{
+        display: none;
+    }
+
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .container .conteudo {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    nav {
+        margin-left: 10%;
+    }
+
+    h2 span{
+        display: inline-block;
+    }
+    
+}
+
+@media (max-width: 1103.95px) {
+    
+}
+
+
+@media (max-width: 959.95px) {
+    h1 {
+        max-width: 100%
+    }
+
+    h2{
+        max-width: 100%;
+        font-size: 1.3rem;
+        display: inline-block;
+    }
+
+    .link-desconto {
+        margin-top: 320px;
+        font-size: 12px;
+    }
+
+    .link-desconto span{
+        font-size: 12px;
+    }
+
+    .botao-produtos {
+        max-width: 960px;
+    }
+
+    .texto-botao-desconto{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: initial;
+
+    }
+
+    .texto-botao-desconto div{
+        justify-content: flex-start;
+        align-items: baseline;
+        width: 100%;
+        margin-bottom: 4px;
+    }
+
+    .texto-botao-desconto p{
+        margin-left: 8px;
+    }
+
+    
+
+    nav{
+        display: none;
+    }
+
+    .container{
+        justify-content: flex-end;
+    }
+    
+    svg rect + rect {
+        margin-top: 2px;
+    }
+}
+
+/* @media (min-width:0px) and (max-width:959.95px) {
+    
+}
+
+@media (min-width:0px) and (max-width:959.95px){
+    
+}
+
+@media (min-width:0px) and (max-width:959.95px){
+    
+}
+
+@media (min-width:960px) {
+    
+}
+
+@media (min-width:0px) and (max-width:959.95px) {
+    
+}
+
+
+@media (min-width:0px) and (max-width:959.95px){
+    
+}
+
+@media (min-width:0px) and (max-width:959.95px){
+    
+}
+
+@media (min-width:960px) {
+    .icon-min {
+        display: none;
+    }
+}
+
+@media (min-width:0px) and (max-width:959.95px) {
+    .icon-max{
+        display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    
+} */
