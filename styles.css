@@ -34,6 +34,18 @@ nav {
     margin-bottom: -80px;
 }
 
+@media (min-width:960px) {
+    .icon-min {
+        display: none;
+    }
+}
+
+@media (min-width:0px) and (max-width:959.95px) {
+    .icon-max{
+        display: none;
+    }
+}
+
 .navegacao li{
     display: inline-block;
     position: relative;
