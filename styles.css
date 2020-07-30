@@ -68,6 +68,10 @@ nav {
     z-index: 11;
 }
 
+.botao-menu{
+    display: none;
+}
+
 .container {
     max-width: 960px;
     margin: auto;
@@ -222,6 +226,16 @@ h2 span{
     display: none;
 }
 
+.menu-lateral{
+    display: absolute;
+    right: -9999px;
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+
 @media (max-width: 1300px) {
 }
 
@@ -308,8 +322,6 @@ h2 span{
         margin-left: 8px;
     }
 
-    
-
     nav{
         display: none;
     }
@@ -318,52 +330,68 @@ h2 span{
         justify-content: flex-end;
     }
     
-    svg rect + rect {
-        margin-top: 2px;
+    .botao-menu{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    #checkbox-menu{
+        position: absolute;
+        opacity: 0;
+    }
+
+    label{
+        cursor: pointer;
+        position: relative;
+        display: block;
+        height: 32px;
+        width: 32px;
+    }
+
+    label span{
+        position: absolute;
+        display: block;
+        height: 1.6px;
+        width: 14.4px;
+        background: #fafafa;
+        transition: 0.25s ease-in-out;
+    }
+
+    label span:nth-child(1){
+        top: 0;
+    }
+
+    label span:nth-child(2){
+        top: 4px;
+    }
+
+    label span:nth-child(3){
+        top: 8px;
+    }
+
+    #checkbox-menu:checked + label{
+        background: #000000;
+        border-radius: 50%;
+    }
+
+    #checkbox-menu:checked + label span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+
+    #checkbox-menu:checked + label span:nth-child(2){
+        opacity: 0;
+    }
+
+    #checkbox-menu:checked + label span:nth-child(3){
+        transform: rotate(45deg);
+        top: 8px;
+    }
+
+    #checkbox-menu:checked + .menu-lateral{
+        transform: translateX(-9999px)
     }
 }
-
-/* @media (min-width:0px) and (max-width:959.95px) {
-    
-}
-
-@media (min-width:0px) and (max-width:959.95px){
-    
-}
-
-@media (min-width:0px) and (max-width:959.95px){
-    
-}
-
-@media (min-width:960px) {
-    
-}
-
-@media (min-width:0px) and (max-width:959.95px) {
-    
-}
-
-
-@media (min-width:0px) and (max-width:959.95px){
-    
-}
-
-@media (min-width:0px) and (max-width:959.95px){
-    
-}
-
-@media (min-width:960px) {
-    .icon-min {
-        display: none;
-    }
-}
-
-@media (min-width:0px) and (max-width:959.95px) {
-    .icon-max{
-        display: none;
-    }
-}
-
-@media (max-width: 960px) {
-    
-} */
