@@ -68,6 +68,7 @@ nav {
     z-index: 11;
 }
 
+
 .botao-menu{
     display: none;
 }
@@ -273,23 +274,7 @@ h2 span{
     
 }
 
-
 @media (max-width: 959.95px) {
-    .menu-lateral{
-        display: block;
-        background: #ffffff;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: fixed; /* Ocupar a tela toda */
-        overflow-y: auto; 
-        padding-top: 32px;
-        padding-bottom: 32px;
-        font-size: 1.2rem;
-    }    
 
     .botao{
         padding: 10px;
@@ -348,7 +333,7 @@ h2 span{
     .container{
         justify-content: flex-end;
     }
-    
+
     .botao-menu{
         height: 100%;
         display: flex;
@@ -357,19 +342,165 @@ h2 span{
     }
     
     #checkbox-menu{
-        position: absolute;
-        opacity: 0;
+        display: none;
     }
-
+    
     label{
         cursor: pointer;
         position: relative;
         display: block;
-        height: 32px;
-        width: 32px;
+        height: 22px;
+        width: 30px;
+        z-index: 200;
+    }
+    
+    label span{
+        position: absolute;
+        display: block;
+        height: 5px;
+        width: 100%;
+        border-radius: 30px;
+        background: #f16234;
+        transition: 0.25s ease-in-out;
+    }
+    
+    label span:nth-child(1){
+        top: 0;
+    }
+    
+    label span:nth-child(2){
+        top: 8px;
+    }
+    
+    label span:nth-child(3){
+        top: 16px;
+    }
+    
+    #checkbox-menu:checked + label span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+    
+    #checkbox-menu:checked + label span:nth-child(2){
+        opacity: 0;
+    }
+    
+    #checkbox-menu:checked + label span:nth-child(3){
+        transform: rotate(45deg);
+        top:8px;
     }
 
-    label span{
+    .barra {
+        background-color: #FFF;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: -3000px;
+        padding-top: auto;
+        padding-bottom: auto;
+    }
+
+    #checkbox-menu:checked ~ .barra{
+        transform: translateX(3000px)
+    } 
+
+
+    .menu-lateral-ul {
+        background: #FFF;
+        padding: 32px 24px;
+        list-style-type: none;
+        
+    }
+
+    .menu-lateral-li p, #duvidas  {
+        display: block;
+        margin-bottom: 16px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.71;
+        padding: 8px 0;
+    }
+
+    #duvidas {
+        text-decoration: none;
+        color: #242424;
+        border-radius: 8px;
+    }
+
+    #duvidas:hover {
+        background-color: #f5f5f5;
+    }
+
+.menu-lateral-links {
+    border-radius: 8px;
+    z-index: 10;
+    list-style-type: none;
+}
+
+
+.menu-lateral-links  li{
+    padding: 8px 0;
+}
+
+.menu-lateral-links  li:hover{
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+.menu-lateral-links  li a{
+    line-height: 1.5;
+    color: #242424;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.botao {
+    position: absolute;
+    width: 154px;
+    right: 60px;
+}
+
+
+    
+    /* .botao-menu{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .barra {
+        background-color: #333;
+        height: 100%;
+        width: 300px;
+        position: absolute;
+        left: -300px;
+    }
+    
+    .barra nav {
+        height: 100%;
+        width: 300px;
+        position: absolute;
+        top: 60px;
+         */
+    }
+    
+    /* #check{
+        display: none;
+    }
+
+    #icone{
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        height: 32px;
+        width: 32px;
+    } */
+/* 
+    #icone span{
         position: absolute;
         display: block;
         height: 1.6px;
@@ -378,38 +509,38 @@ h2 span{
         transition: 0.25s ease-in-out;
     }
 
-    label span:nth-child(1){
+    #icone span:nth-child(1){
         top: 0;
     }
 
-    label span:nth-child(2){
+    #icone span:nth-child(2){
         top: 4px;
     }
 
-    label span:nth-child(3){
+    #icone span:nth-child(3){
         top: 8px;
     }
 
-    #checkbox-menu:checked + label{
+    #checkbox-menu:checked + #icone{
         background: #000000;
         border-radius: 50%;
     }
 
-    #checkbox-menu:checked + label span:nth-child(1){
+    #checkbox-menu:checked + #icone span:nth-child(1){
         transform: rotate(-45deg);
         top: 8px;
     }
 
-    #checkbox-menu:checked + label span:nth-child(2){
+    #checkbox-menu:checked + #icone span:nth-child(2){
         opacity: 0;
     }
 
-    #checkbox-menu:checked + label span:nth-child(3){
+    #checkbox-menu:checked + #icone span:nth-child(3){
         transform: rotate(45deg);
         top: 8px;
-    }
+    } */
 
-    #checkbox-menu:checked + .menu-lateral{
-        transform: translateX(-9999px)
-    }
-}
+    /* #check:checked ~ .barra{
+        transform: translateX(300px)
+    } */
+    
