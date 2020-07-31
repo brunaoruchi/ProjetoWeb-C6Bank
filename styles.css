@@ -63,11 +63,11 @@ nav {
     color: #242424;
     font-size: 14px;
     flex: 0 0 25%;
-    max-width: 25%;
+    max-width: 23%;
     font-weight: 500;
     z-index: 11;
+    letter-spacing: 0.047rem
 }
-
 
 .botao-menu{
     display: none;
@@ -244,6 +244,8 @@ h2 span{
 
     .icon-min{
         display: inline-block;
+        height: 28px;
+        width: auto;
     }
 
     .icon-max{
@@ -276,12 +278,19 @@ h2 span{
 
 @media (max-width: 959.95px) {
 
+    .icon-min{
+        height: 20px;
+        width: auto;       
+    }
+
     .botao{
         padding: 10px;
         font-size: 12px;
-        width: 10px;
         flex: 0 0 40%;
         max-width: 35%;
+        position: absolute;
+        width: 154px;
+        right: 70px;
     }
 
     h1 {
@@ -312,7 +321,6 @@ h2 span{
         flex-direction: column;
         justify-content: space-between;
         align-items: initial;
-
     }
 
     .texto-botao-desconto div{
@@ -357,10 +365,9 @@ h2 span{
     label span{
         position: absolute;
         display: block;
-        height: 5px;
-        width: 100%;
-        border-radius: 30px;
-        background: #f16234;
+        height: 1.5px;
+        width: 15px;
+        background:rgb(180, 180, 180);
         transition: 0.25s ease-in-out;
     }
     
@@ -369,16 +376,17 @@ h2 span{
     }
     
     label span:nth-child(2){
-        top: 8px;
+        top: 4px;
     }
     
     label span:nth-child(3){
-        top: 16px;
+        top: 8px;
     }
     
     #checkbox-menu:checked + label span:nth-child(1){
         transform: rotate(-45deg);
         top: 8px;
+        background:rgba(0, 0, 0, 0.863);
     }
     
     #checkbox-menu:checked + label span:nth-child(2){
@@ -388,6 +396,12 @@ h2 span{
     #checkbox-menu:checked + label span:nth-child(3){
         transform: rotate(45deg);
         top:8px;
+        background: rgba(0, 0, 0, 0.863);
+    }
+
+    .icon-min-barra {
+        height: 20px;
+        width: auto;
     }
 
     .barra {
@@ -398,12 +412,14 @@ h2 span{
         left: -3000px;
         padding-top: auto;
         padding-bottom: auto;
+        overflow-y: auto;
     }
 
     #checkbox-menu:checked ~ .barra{
-        transform: translateX(3000px)
-    } 
-
+        transform: translateX(3000px);
+        top: 0;
+        position: fixed;
+    }
 
     .menu-lateral-ul {
         background: #FFF;
@@ -431,37 +447,30 @@ h2 span{
         background-color: #f5f5f5;
     }
 
-.menu-lateral-links {
-    border-radius: 8px;
-    z-index: 10;
-    list-style-type: none;
+    .menu-lateral-links {
+        border-radius: 8px;
+        z-index: 10;
+        list-style-type: none;
+    }
+
+    .menu-lateral-links  li{
+        padding: 8px 0;
+    }
+
+    .menu-lateral-links  li:hover{
+        border-radius: 8px;
+        background-color: #f5f5f5;
+    }
+
+    .menu-lateral-links  li a{
+        line-height: 1.5;
+        color: #242424;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 14px;
+        padding: 8px 0;
+    }
 }
-
-
-.menu-lateral-links  li{
-    padding: 8px 0;
-}
-
-.menu-lateral-links  li:hover{
-    border-radius: 8px;
-    background-color: #f5f5f5;
-}
-
-.menu-lateral-links  li a{
-    line-height: 1.5;
-    color: #242424;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-    padding: 8px 0;
-}
-
-.botao {
-    position: absolute;
-    width: 154px;
-    right: 60px;
-}
-
 
     
     /* .botao-menu{
@@ -484,8 +493,8 @@ h2 span{
         width: 300px;
         position: absolute;
         top: 60px;
-         */
-    }
+         
+    }*/
     
     /* #check{
         display: none;
@@ -543,4 +552,3 @@ h2 span{
     /* #check:checked ~ .barra{
         transform: translateX(300px)
     } */
-    
