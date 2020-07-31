@@ -12,7 +12,7 @@ body {
 }
 
 section {
-    background: url("assets/hero-bg.jpg")  no-repeat center center / cover, linear-gradient(180deg, rgba(0, 0, 0, 0) 31.46%, #000000 100%);
+    background: url("assets/hero-bg.jpg")  no-repeat center center / cover, linear-gradient(180deg, rgba(0, 0, 0, 0) 31.46%, #000000d5 100%);
     background-blend-mode: multiply;
     height: 100vh;
 }
@@ -226,14 +226,10 @@ h2 span{
     display: none;
 }
 
-.menu-lateral{
-    display: absolute;
-    right: -9999px;
-    background: #ffffff;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    z-index: 2;
+@media (max-width: 582.99px){
+    section {
+        background: url("assets/hero-bg-xs.jpg")  no-repeat center center / cover, linear-gradient(180deg, rgba(0, 0, 0, 0) 31.46%, #000000d5 100%);
+    }
 }
 
 @media (max-width: 1300px) {
@@ -244,7 +240,6 @@ h2 span{
         padding-left: 24px;
         padding-right: 24px;
     }
-
 
     .icon-min{
         display: inline-block;
@@ -280,6 +275,30 @@ h2 span{
 
 
 @media (max-width: 959.95px) {
+    .menu-lateral{
+        display: block;
+        background: #ffffff;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed; /* Ocupar a tela toda */
+        overflow-y: auto; 
+        padding-top: 32px;
+        padding-bottom: 32px;
+        font-size: 1.2rem;
+    }    
+
+    .botao{
+        padding: 10px;
+        font-size: 12px;
+        width: 10px;
+        flex: 0 0 40%;
+        max-width: 35%;
+    }
+
     h1 {
         max-width: 100%
     }
@@ -335,7 +354,6 @@ h2 span{
         display: flex;
         align-items: center;
         justify-content: center;
-        
     }
     
     #checkbox-menu{
@@ -356,7 +374,7 @@ h2 span{
         display: block;
         height: 1.6px;
         width: 14.4px;
-        background: #fafafa;
+        background: hsl(152, 92%, 41%);
         transition: 0.25s ease-in-out;
     }
 
