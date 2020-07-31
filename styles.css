@@ -8,7 +8,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    overflow-y: scroll;
 }
 
 section {
@@ -372,21 +371,31 @@ h2 span{
     }
     
     label span:nth-child(1){
-        top: 0;
+        top: 7px;
+        right: 7.5px;
     }
     
     label span:nth-child(2){
-        top: 4px;
+        top: 11px;
+        right: 7.5px;
     }
     
     label span:nth-child(3){
-        top: 8px;
+        top: 15px;
+        right: 7.5px;
+    }
+
+    #checkbox-menu:checked + label {
+        background: rgba(0, 0, 0, 0.863);
+        padding: 16px;
+        border-radius: 50%;
     }
     
     #checkbox-menu:checked + label span:nth-child(1){
         transform: rotate(-45deg);
-        top: 8px;
-        background:rgba(0, 0, 0, 0.863);
+        top: 16px;
+        right: 8px;
+        background: white;
     }
     
     #checkbox-menu:checked + label span:nth-child(2){
@@ -395,8 +404,9 @@ h2 span{
     
     #checkbox-menu:checked + label span:nth-child(3){
         transform: rotate(45deg);
-        top:8px;
-        background: rgba(0, 0, 0, 0.863);
+        top:16px;
+        right: 8px;
+        background: white;
     }
 
     .icon-min-barra {
@@ -423,7 +433,7 @@ h2 span{
 
     .menu-lateral-ul {
         background: #FFF;
-        padding: 32px 24px;
+        padding: 98px 24px;
         list-style-type: none;
         
     }
@@ -469,6 +479,12 @@ h2 span{
         font-weight: 400;
         font-size: 14px;
         padding: 8px 0;
+    }
+
+    .icon-min-barra {
+        position: absolute;
+        top: 24px;
+        left: 24px;
     }
 }
 
@@ -521,6 +537,8 @@ h2 span{
     #icone span:nth-child(1){
         top: 0;
     }
+
+    
 
     #icone span:nth-child(2){
         top: 4px;
