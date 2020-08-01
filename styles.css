@@ -40,7 +40,7 @@ nav {
     cursor: pointer;
     font-weight: 600;
     color: #fafafa;
-    font-size: 1rem;
+    font-size: 16px;
     padding: 16px 0;
 }
 
@@ -49,13 +49,14 @@ nav {
 }
 
 .navegacao-li-a {
-    text-decoration: none; color: #fafafa;
+    text-decoration: none;
+    color: #fafafa;
 }
 
 .botao {
     background: linear-gradient(150.53deg, #FFE45C 0%, #FFC900 100%);
     padding: 16px;
-    border-radius: 1.5rem;
+    border-radius: 24px;
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
@@ -65,7 +66,7 @@ nav {
     max-width: 23%;
     font-weight: 500;
     z-index: 11;
-    letter-spacing: 0.047rem
+    letter-spacing: 0.752px;
 }
 
 .botao-menu{
@@ -100,7 +101,7 @@ nav {
     text-decoration: none;
     background-color: rgba(36, 36, 36, 0.6);
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: 14px;
 }
 
 .texto-botao-desconto{
@@ -111,7 +112,7 @@ nav {
 .link-desconto span {
     background-color: #006d8f;
     color: #fafafa;
-    font-size: 0.875rem;
+    font-size: 14px;
     border-radius: 20px;
     height: 24px;
     padding: 0 8px;
@@ -130,8 +131,8 @@ nav {
 }
 
 .link-desconto:hover {
-    border-color: hsla(0, 0%, 98%, 1);
-    background-color: hsla(0, 0%, 98%, 0.1);
+    border-color: #fafafa;
+    background-color: rgba(250, 250, 250, 0.1);
 }
 
 h1 {
@@ -139,17 +140,17 @@ h1 {
     line-height: 1.11;
     margin-bottom: 24px;
     font-size: calc(32px + (72 - 32) * ((100vw - 0px) / (1920 - 0)));
-    color: #ffffff;
+    color: #fff;
     max-width: 75%
 }
 
 h2 {
     padding: 0;
-    color: rgb(250, 250, 250);
-    font-size: 1.5rem;
+    color: #fafafa;
+    font-size: 24px;
     line-height: 1.33;
     font-weight: normal;
-    max-width: 83.33333333%;
+    max-width: 83.33%;
 }
 
 h2 span{
@@ -159,11 +160,11 @@ h2 span{
 .botao-produtos {
     margin-top: 32px;
     max-width: 340px;
-    border: 1px solid hsla(0, 0%, 98%, 0.35);
-    background-color: hsla(0, 0%, 98%, 0.1);
+    border: 1px solid rgba(250, 250, 250, 0.35);
+    background-color: rgba(250, 250, 250, 0.1);
     display: block;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 500;
     min-width: 64px;
     box-sizing: border-box;
@@ -171,15 +172,15 @@ h2 span{
     color: #fff;
     padding: 12px;
     line-height: 1.75;
-    border-radius: 1.5rem;
+    border-radius: 24px;
     text-transform: uppercase;
     text-decoration: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .botao-produtos:hover {
-    border-color: hsla(0, 0%, 98%, 1);
-    background-color: hsla(0, 0%, 98%, 0.1);
+    border-color: #fafafa;
+    background-color: rgba(250, 250, 250, 0.1);
 }
 
 .links {
@@ -232,9 +233,6 @@ h2 span{
     }
 }
 
-@media (max-width: 1300px) {
-}
-
 @media (max-width: 1279px) {
     header{
         padding-left: 24px;
@@ -271,8 +269,10 @@ h2 span{
     
 }
 
-@media (max-width: 1103.95px) {
-    
+@media (max-width: 1279px) and (device-aspect-ratio: 4/4){
+    section {
+        background: url("assets/hero-bg-xs.jpg")  no-repeat center center / cover, linear-gradient(180deg, rgba(0, 0, 0, 0) 31.46%, #000000d5 100%);
+    }
 }
 
 @media (max-width: 959.95px) {
@@ -393,8 +393,8 @@ h2 span{
     
     #checkbox-menu:checked + label span:nth-child(1){
         transform: rotate(-45deg);
-        top: 16px;
-        right: 8px;
+        top: 15px;
+        right: 8.5px;
         background: white;
     }
     
@@ -404,8 +404,8 @@ h2 span{
     
     #checkbox-menu:checked + label span:nth-child(3){
         transform: rotate(45deg);
-        top:16px;
-        right: 8px;
+        top:15px;
+        right: 8.5px;
         background: white;
     }
 
@@ -487,86 +487,3 @@ h2 span{
         left: 24px;
     }
 }
-
-    
-    /* .botao-menu{
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .barra {
-        background-color: #333;
-        height: 100%;
-        width: 300px;
-        position: absolute;
-        left: -300px;
-    }
-    
-    .barra nav {
-        height: 100%;
-        width: 300px;
-        position: absolute;
-        top: 60px;
-         
-    }*/
-    
-    /* #check{
-        display: none;
-    }
-
-    #icone{
-        cursor: pointer;
-        position: absolute;
-        z-index: 1;
-        display: block;
-        height: 32px;
-        width: 32px;
-    } */
-/* 
-    #icone span{
-        position: absolute;
-        display: block;
-        height: 1.6px;
-        width: 14.4px;
-        background: hsl(152, 92%, 41%);
-        transition: 0.25s ease-in-out;
-    }
-
-    #icone span:nth-child(1){
-        top: 0;
-    }
-
-    
-
-    #icone span:nth-child(2){
-        top: 4px;
-    }
-
-    #icone span:nth-child(3){
-        top: 8px;
-    }
-
-    #checkbox-menu:checked + #icone{
-        background: #000000;
-        border-radius: 50%;
-    }
-
-    #checkbox-menu:checked + #icone span:nth-child(1){
-        transform: rotate(-45deg);
-        top: 8px;
-    }
-
-    #checkbox-menu:checked + #icone span:nth-child(2){
-        opacity: 0;
-    }
-
-    #checkbox-menu:checked + #icone span:nth-child(3){
-        transform: rotate(45deg);
-        top: 8px;
-    } */
-
-    /* #check:checked ~ .barra{
-        transform: translateX(300px)
-    } */
