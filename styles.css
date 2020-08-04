@@ -67,6 +67,7 @@ nav {
     font-weight: 500;
     z-index: 11;
     letter-spacing: 0.752px;
+    white-space: nowrap;
 }
 
 .botao-menu{
@@ -486,4 +487,24 @@ h2 span{
         top: 24px;
         left: 24px;
     }
+}
+
+@media (max-width: 375px ) {
+    .botao {
+        max-width: 154px;
+    }
+}
+
+@media (max-height: 667px) {
+
+    section {
+        height: auto;
+    }
+
+    .link-desconto {
+        margin-top: 82px;
+    }
+
+
+    
 }
