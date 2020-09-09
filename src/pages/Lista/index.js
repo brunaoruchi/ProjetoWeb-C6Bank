@@ -1,52 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import {uuid} from 'uuidv4';
 import axios from 'axios';
 
 import Pesquisa from '../components/Pesquisa'
 
-// const userInfo = [
-//     {
-//         id: 1,
-//         email:"teste@hotmail.com",
-//         password:"1234",
-//     },
-//     {
-//         id: 2,
-//         email:"tes@hotmail.com",
-//         password:"14",
-//     }
-// ];
-
 export default function Lista() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [flag, setFlag] = useState('');
 
     async function onLoginSubmit(e) {
         e.preventDefault();
-            // if(email !== '' || password !== '') {
-            //     const passed = []
-            //     for (var i = 0; i < userInfo.length; i++) {
-            //         if(userInfo[i].email === email){
-            //             if(userInfo[i].password === password)
-            //                 passed.push(userInfo[i])
-            //         }
-            //     }       
-            //     if(passed.length === 0){
-            //         alert("Dados incorretos!");
-            //     }else{
-            //         localStorage.setItem("@C6Bank:token", uuid());
-            //         alert("Dados corretos!");      
-            //     }
-            // }
-            // else {
-            //     alert("Insira os dados");
-            // }
-        
+        if(!email){
+            setError('Digite o email');
+            return
+        }
+        if(!password){
+            setError('Digite a senha');
+            return
+        }
+        try {
             const res = await axios.post('https://reqres.in/api/login', {"email": email,
-            "password": password});
-
+        "password": password});
             localStorage.setItem("@C6Bank:token", res.data.token);
             console.log(res.data);
+            setError('');
+            setFlag(localStorage.getItem(`@C6Bank:token`));
+        } catch{
+            setError('Login/Senha inválida');
+            return
+        }    
+    }
+
+    useEffect(() => {
+        setFlag(localStorage.getItem(`@C6Bank:token`));
+    },[])
+    
+    function onSair(){
+        localStorage.removeItem(`@C6Bank:token`)
+        alert('token liberado');
+        window.location.reload();
     }
 
     return (
@@ -56,7 +50,7 @@ export default function Lista() {
                 <label htmlFor="email">E-mail: </label>
                 <input 
                     id="email" 
-                    type="text" 
+                    type="email" 
                     value={email} 
                     onChange={e => setEmail(e.target.value)}
                 />
@@ -69,8 +63,10 @@ export default function Lista() {
                 />
                 <button type="submit">Entrar</button>
             </form>
+            <button type="submit" onClick={onSair} >Sair</button>
 
-            <Pesquisa />
+            {error&&<span>{error}</span>}
+            {flag && <Pesquisa />}
         </>
     );
 }

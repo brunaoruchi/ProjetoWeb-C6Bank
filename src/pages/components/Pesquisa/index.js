@@ -14,15 +14,13 @@ function Pesquisa() {
                 return pais.country.toLowerCase().includes(campoTexto.toLowerCase());
             return false;
         })
-
         setPaises(aux);
     }
-
 
     return (
         <>
             <form onSubmit={campoTextoSubmit}>
-                <label htmlFor="pais">Paśs: </label>
+                <label htmlFor="pais">País: </label>
                 <input 
                     id="pais" 
                     type="text" 
