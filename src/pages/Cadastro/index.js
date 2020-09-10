@@ -1,41 +1,37 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function Cadastro() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     async function onCadastroSubmit(e) {
         e.preventDefault();
-            // if(email !== '' || password !== '') {
-            //     const passed = []
-            //     for (var i = 0; i < userInfo.length; i++) {
-            //         if(userInfo[i].email === email){
-            //             if(userInfo[i].password === password)
-            //                 passed.push(userInfo[i])
-            //         }
-            //     }       
-            //     if(passed.length === 0){
-            //         alert("Dados incorretos!");
-            //     }else{
-            //         localStorage.setItem("@C6Bank:token", uuid());
-            //         alert("Dados corretos!");      
-            //     }
-            // }
-            // else {
-            //     alert("Insira os dados");
-            // }
-        
-            const res = await axios.post('https://reqres.in/api/register', {"email": email,
+        if(!email){
+            setError('Digite seu email.');
+            return
+        }
+        if(!password){
+            setError('Digite sua senha.');
+            return
+        }
+        try {
+            const token = await axios.post('https://reqres.in/api/register', {"email": email,
             "password": password});
-
-            console.log(res.data);
+            alert(token.data.token);
+        } catch{
+            setError('Cadastro inválido!');
+            return
+        }
     }
 
 
     return (
-        <>
-             <h1 id="h1criarconta">Fazer login: </h1>
+        <div className="form-user">
+            <h1 id="h1criarconta">Criar conta: </h1>
+            <Link to="/" className="botao" >Voltar</Link>
             <form onSubmit={onCadastroSubmit}>
                 <label htmlFor="email">E-mail: </label>
                 <input 
@@ -53,7 +49,8 @@ function Cadastro() {
                 />
                 <button type="submit">Criar</button>
             </form>
-        </>
+            {error&&<span className="erro-form">{error}</span>}
+        </div>
     );
 }
 

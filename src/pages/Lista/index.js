@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react';
 // import {uuid} from 'uuidv4';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 import Pesquisa from '../components/Pesquisa'
 
 export default function Lista() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [error, setError] = useState(['']);
     const [flag, setFlag] = useState('');
 
     async function onLoginSubmit(e) {
         e.preventDefault();
         if(!email){
-            setError('Digite o email');
-            return
+            setError('Digite seu email.');
+            return;
         }
         if(!password){
-            setError('Digite a senha');
-            return
+            setError('Digite sua senha.');
+            return;
         }
         try {
             const res = await axios.post('https://reqres.in/api/login', {"email": email,
@@ -28,8 +29,8 @@ export default function Lista() {
             setError('');
             setFlag(localStorage.getItem(`@C6Bank:token`));
         } catch{
-            setError('Login/Senha inválida');
-            return
+            setError('Login/Senha inválida!');
+            return;
         }    
     }
 
@@ -39,13 +40,15 @@ export default function Lista() {
     
     function onSair(){
         localStorage.removeItem(`@C6Bank:token`)
-        alert('token liberado');
-        window.location.reload();
+        alert('Usuário deslogado!');
+        setFlag(null)
     }
 
     return (
-        <>
-            <h1 id="h1criarconta">Fazer login: </h1>
+        <div className="form-user">
+                <h1 id="h1criarconta">Fazer login: </h1>
+                <Link to="/" className="botao" >Voltar</Link>
+            
             <form onSubmit={onLoginSubmit}>
                 <label htmlFor="email">E-mail: </label>
                 <input 
@@ -62,11 +65,16 @@ export default function Lista() {
                     onChange={e => setPassword(e.target.value)}
                 />
                 <button type="submit">Entrar</button>
+                
             </form>
-            <button type="submit" onClick={onSair} >Sair</button>
+            <button className="botao-sair"onClick={onSair} >Sair</button>
 
-            {error&&<span>{error}</span>}
+            {error&&<span  className="erro-form">{error}</span>}
+
+            
+
+            
             {flag && <Pesquisa />}
-        </>
+        </div>
     );
 }

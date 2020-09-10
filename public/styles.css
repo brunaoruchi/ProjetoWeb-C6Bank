@@ -511,4 +511,58 @@ h2 span{
 
 #h1criarconta{
     color: black;
+} 
+
+.erro-form{
+    color: red;
+}
+
+.form-user{
+    display: flex;
+    flex-direction: column;
+    width: 960px;
+    margin: auto;
+
+}
+
+.form-user div{
+    display: flex;
+    justify-items: end;
+    align-content: space-between;
+    width: 100%;
+}
+
+.form-user form {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+.form-user form input{
+    margin: 2px;
+}
+
+.botao-sair{
+    margin: 0 10px;
+}
+
+.campo-moeda {
+    width: 100%;
+    margin: 24px;
+}
+
+.campo-moeda {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-moeda img {
+    width: 300px;
+}
+
+.campo-moeda h2 {
+    color: black;
+}
+
+.campo-moeda p {
+    color: black;
 }
