@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import {uuid} from 'uuidv4';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
@@ -25,7 +24,6 @@ export default function Lista() {
             const res = await axios.post('https://reqres.in/api/login', {"email": email,
         "password": password});
             localStorage.setItem("@C6Bank:token", res.data.token);
-            console.log(res.data);
             setError('');
             setFlag(localStorage.getItem(`@C6Bank:token`));
         } catch{
@@ -70,9 +68,6 @@ export default function Lista() {
             <button className="botao-sair"onClick={onSair} >Sair</button>
 
             {error&&<span  className="erro-form">{error}</span>}
-
-            
-
             
             {flag && <Pesquisa />}
         </div>
