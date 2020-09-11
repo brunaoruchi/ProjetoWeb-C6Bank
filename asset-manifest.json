@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ProjetoWeb-C6Bank/static/css/main.36497136.chunk.css",
+    "main.js": "/ProjetoWeb-C6Bank/static/js/main.7dc9bd71.chunk.js",
+    "main.js.map": "/ProjetoWeb-C6Bank/static/js/main.7dc9bd71.chunk.js.map",
+    "runtime-main.js": "/ProjetoWeb-C6Bank/static/js/runtime-main.d93fb482.js",
+    "runtime-main.js.map": "/ProjetoWeb-C6Bank/static/js/runtime-main.d93fb482.js.map",
+    "static/js/2.068f90a3.chunk.js": "/ProjetoWeb-C6Bank/static/js/2.068f90a3.chunk.js",
+    "static/js/2.068f90a3.chunk.js.map": "/ProjetoWeb-C6Bank/static/js/2.068f90a3.chunk.js.map",
+    "index.html": "/ProjetoWeb-C6Bank/index.html",
+    "precache-manifest.c320846892d82f7cbfea8e60380805ab.js": "/ProjetoWeb-C6Bank/precache-manifest.c320846892d82f7cbfea8e60380805ab.js",
+    "service-worker.js": "/ProjetoWeb-C6Bank/service-worker.js",
+    "static/css/main.36497136.chunk.css.map": "/ProjetoWeb-C6Bank/static/css/main.36497136.chunk.css.map",
+    "static/js/2.068f90a3.chunk.js.LICENSE.txt": "/ProjetoWeb-C6Bank/static/js/2.068f90a3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d93fb482.js",
+    "static/js/2.068f90a3.chunk.js",
+    "static/css/main.36497136.chunk.css",
+    "static/js/main.7dc9bd71.chunk.js"
+  ]
+}
